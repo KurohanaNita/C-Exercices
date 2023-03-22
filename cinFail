@@ -1,0 +1,52 @@
+/*
+ Ex - zestes de savoir: Cin Fail
+But : nous sommes en mesure de nous protéger
+tant que l’entrée n’est pas correcte.
+Date création : 26.10.2022
+mise à jour : 26.10.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+int main() {
+    int jour = 0;
+    do {
+        cout << "Quel jour es-tu né-e ? ";
+        cin >> jour;
+        while (cin.fail ()) {
+            cin.clear ();
+            cin.ignore (numeric_limits <streamsize>::max (), '\n');
+            cout << "Entrée invalide. Recommence: ";
+            cin >> jour;
+        }
+    } while (jour < 1 && jour > 31 );
+
+    cout << "Quel mois es-tu né-e ? ";
+    int mois = 0;
+    cin >> mois;
+    while(cin.fail()) {
+        cin.clear ();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Entrée invalide. Recommence: ";
+        cin >> mois;
+    }
+
+    cout << "Quel année es-tu né-e ? ";
+    int annee = 0;
+    cin >> annee;
+    while(cin.fail()) {
+        cin.clear ();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Entrée invalide. Recommence: ";
+        cin >> annee;
+    }
+
+    cout << "Tu es né-e le " << jour << "/" << mois << "/" << annee <<  "." << endl;
+
+
+    return 0;
+}
