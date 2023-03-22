@@ -1,0 +1,57 @@
+/*
+ Ex - zestes de savoir: La Laverie
+But : Nous allons faire un programme d’aide dans une laverie automatique.
+Dans celle-ci, deux types de machines sont employées:
+des machines économes capables de laver 5kg de linge au maximum et d’autres, plus gourmandes,
+ capables de laver 10kg
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 26.10.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+int main() {
+    int clothWeight = 0;
+    int qt10 = 0;
+
+    const int MACHINE_5 = 5;
+    const int MACHINE_10 = 10;
+
+    cout << "Veuillez entrer le poids total de votre linge en kg: ";
+    cin >> clothWeight;
+    while (cin.fail()){
+        cin.clear ();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Veuillez entrer le poids total de votre linge en kg: ";
+        cin >> clothWeight;
+    }
+
+    if (clothWeight < MACHINE_5){
+        cout << "Pour " << clothWeight << "kg d'habits, veuillez laver vos habits dans la petite machine.";
+    } else if ( clothWeight >= MACHINE_5 && clothWeight <= MACHINE_10){
+        cout << "Pour " << clothWeight << "kg d'habits, veuillez laver vos habits dans la grande machine.";
+    } else {
+
+        while (clothWeight > MACHINE_10) {
+            qt10 ++;
+
+            clothWeight = clothWeight - MACHINE_10;
+
+        }
+
+        if (clothWeight < MACHINE_5){
+            cout << "Lavez " << qt10 << " fois 10kg dans grande machine et " << clothWeight
+             << "kg dans la petite machine.";
+        } else {
+            cout << "Lavez " << ++qt10 << " fois 10kg dans grande machine.";
+        }
+    }
+
+
+    return 0;
+}
