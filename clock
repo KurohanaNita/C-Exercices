@@ -1,0 +1,45 @@
+/* ---------------------------
+Ex - zestes de savoir : horloge
+But : program telling the period of the day depending on the hour.
+Auteur(-e-s) : Elbunita Halimi
+Date création : 19.10.2022
+mise à jour : 19.10.2022
+Remarque(s) :
+--------------------------- */
+
+#include <iostream>
+#include <limits>
+
+
+using namespace std;
+
+int main() {
+
+    int time = 0;
+
+    do {
+        cout << "Entrez une heure entre 0 et 24: ";
+        cin >> time;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrez une heure entre 0 et 24: " << endl;
+            cin >> time;
+        }
+    } while (time < 0 || time > 24);
+
+
+    if (time > 8 && time < 12) {
+        cout << "Quand il est " << time << "h00, c'est le matin." << endl;
+    }else if (time == 12) {
+        cout << "Quand il est " << time << "h00, c'est midi." << endl;
+    }else if (time > 12 && time < 16) {
+        cout << "Quand il est " << time << "h00, c'est l'après-midi." << endl;
+    } else if ( time >= 16  && time < 20) {
+        cout << "Quand il est " << time << "h00, c'est le soir." << endl;
+    } else if (time == 0 || time == 24) {
+        cout << "Quand il est " << time << "h00, c'est minuit." << endl;
+    } else {
+        cout << "Quand il est " << time << "h00, c'est la nuit." << endl;
+    }
+}
