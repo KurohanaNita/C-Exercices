@@ -1,0 +1,33 @@
+/*
+ Ex - cours: Etages.
+But : if else if esle
+Auteur(-e-s) : Elbunita Halimi
+Date création : 02.11.2022
+mise à jour : 02.11.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int etage = 0, vraiEtage = 0;
+    cout << "eNTREZ éTAGE: " ;
+    cin >> etage;
+
+    if (etage < 13) {
+        vraiEtage = etage;
+        cout << "Vrai étage: " << vraiEtage;
+    }
+    else if (etage == 13) {
+        cerr << "Erreur"
+                " etage vaut 13" << endl;
+    }
+    else { // etage > 13
+        vraiEtage = etage - 1;
+        cout << "Vrai étage: " << vraiEtage;
+    }
+}
