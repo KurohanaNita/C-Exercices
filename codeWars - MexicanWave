@@ -1,0 +1,35 @@
+/*
+Ex - codewars : In this simple Kata your task is to create a function
+ that turns a string into a Mexican Wave.
+ You will be passed a string and you must return that string in an array
+ where an uppercase letter is a person standing up:
+    wave("hello") => {"Hello", "hEllo", "heLlo", "helLo", "hellO"}
+
+Auteur(-e-s) : Elbunita Halimi
+Date création : 21.12.2022
+mise à jour : 21.12.2022
+Remarque(s) :.
+*/
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+vector<string> wave(string y){
+
+    size_t stringSize = y.size();
+    vector<string> mex;
+    mex.resize(size);
+
+
+
+
+
+    return mex;
+}
+
+int main() {
+
+    return 0;
+}
