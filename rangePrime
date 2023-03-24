@@ -1,0 +1,61 @@
+/*Ex - w3resource: Range of primes
+But : Write a program in C++ to find prime number within a range.
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 27.10.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int minValue = 0;
+    int maxValue = 0;
+    cout << "Trouvons les nombres premiers dans une intevalle" << endl;
+    cout << "-------------------------------------------------" << endl;
+
+    cout << "Entrez la borne inférieure : ";
+    cin >> minValue;
+    while (cin.fail()){
+        cin.clear ();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n' );
+        cout << "Entrez un nombre entier: ";
+        cin >> minValue;
+
+    }
+
+    cout << "Entrez la borne supérieure : ";
+    cin >> maxValue;
+    while (cin.fail()){
+        cin.clear ();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n' );
+        cout << "Entrez un nombre entier: ";
+        cin >> maxValue;
+
+    }
+
+    int find = 0;
+    int control = 0;
+
+    cout << "Les premiers entre " << minValue << " et " << maxValue << " sont: " << endl;
+    for(int i = minValue; i <= maxValue; i++){
+        for(int j = 2; j <= sqrt(i); j++) {
+            if(i%j==0) {
+                control++;
+            }
+        }
+        if(control == 0 && i != 1){
+            find++;
+            cout << i << " ";
+        }
+        control = 0;
+    }
+    cout<<"Il y a " << find << " premiers entre " << minValue << " et " << maxValue << "." << endl;
+
+    return 0;
+}
+
