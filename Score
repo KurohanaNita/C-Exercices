@@ -1,0 +1,47 @@
+/*
+ Ex - zestes de savoir: Score
+But : Imaginez que vous avez un score de jeu vidéo sous la main.
+    Si le score est strictement inférieur à deux mille, affichez «C’est la catastrophe!»
+    Si le score est supérieur ou égal à deux mille et que le score est strictement inférieur à cinq mille,
+    affichez: «Tu peux mieux faire!»
+    Si le score est supérieur ou égal à cinq mille et que le score est strictement inférieur à neuf mille,
+    affichez: «Tu es sur la bonne voie!»
+    Sinon, affichez: «Tu es le meilleur!»
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 26.10.2022
+Remarque(s) :.
+*/
+#include <iostream>
+#include <limits>
+using namespace std;
+
+int main() {
+    cout << "Enter you score: ";
+    int gameScore = 0;
+
+    cin >> gameScore;
+        while (cin.fail()){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>:: max(), '\n');
+            cout << "Enter you score: ";
+            cin >> gameScore;
+        }
+
+    const int badGame = 1000;
+    const int mediumGame = 5000;
+    const int goodGame = 9000;
+
+    if (gameScore < badGame) {
+        cout << "Your score is " << gameScore << ", How could you be this bad...." << endl;
+    } else if (gameScore >= badGame && gameScore < mediumGame) {
+        cout << "Your score is " << gameScore << ", Meh.... Could do better!" << endl;
+    } else if (gameScore >= mediumGame && gameScore < goodGame) {
+        cout << "Your score is " << gameScore << ", Well done, well done... GO PRACTICE MORE! " << endl;
+    } else {
+        cout << "Your score is " << gameScore << ", You are a living god!" << endl;
+    }
+
+
+    return 0;
+}
