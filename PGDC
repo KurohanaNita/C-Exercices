@@ -1,0 +1,31 @@
+/*
+ Ex - zestes de savoir: PGDC
+But : Allez, on va faire un peu de mathématiques!
+Le PGCD de deux nombres est un entier qui est le plus grand diviseur que ces deux nombres ont en commun.
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 26.10.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int a = 0, b = 0, r = 0;
+
+    cout << "Entrez les deux nombres dont vous voulez le PGDC: ";
+    cin >> a >> b;
+
+    r = a % b;
+
+    while (r != 0){
+        a = b;
+        b = r;
+        r = a % b;
+    }
+    cout << "Le PGDC est: " << b;
+
+    return 0;
+}
