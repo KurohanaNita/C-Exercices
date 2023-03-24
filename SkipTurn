@@ -1,0 +1,35 @@
+/*Ex - zestes de savoir: skip ton tour
+But : Imaginons que nous voulions un programme
+permettant d’afficher les nombres impairs compris entre 0 et un nombre choisi par l’utilisateur.
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 27.10.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+int main() {
+    int number = 0;
+    int i = 0;
+
+    cout << "Entrez un nombre et tous les nombres impaires jusqu'à lui seront affiché: ";
+    cin >> number;
+    while (cin.fail()){
+        cin.clear ();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n' );
+        cout << "Entrez un nombre entier: ";
+        cin >> number;
+    }
+    cout << 0 << endl;
+    for (i = 0; i <= number; i++) {
+        if (i & 1){
+            cout << i << endl;
+        }
+    }
+
+    return 0;
+}
