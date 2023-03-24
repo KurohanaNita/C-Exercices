@@ -1,0 +1,38 @@
+/*
+ Ex - cours: Tiquet de caisse.
+But : Formatage
+Auteur(-e-s) : Elbunita Halimi
+Date création : 02.11.2022
+mise à jour : 02.11.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+
+    const int  w = 7;
+    const int  x = 15;
+    const double TVA = 0.077;
+    double  prix1 = 10.24, prix2 = 117.20, prix3 = 6.99;
+
+    cout << setprecision(2) << fixed;
+    cout << setw(w) << "Prix HT"
+         << setw(w) << "TVA" << endl;
+    cout << setfill('-')<< setw(x) << " " << endl;
+    cout << setfill(' ') << setw(w) << prix1
+         << setw(w) << prix1 * TVA << endl;
+    cout << setw(w) << prix2
+         << setw(w) << prix2 * TVA << endl;
+    cout << setw(w) << prix3
+         << setw(w) << prix3 * TVA << endl;
+    cout << setfill('-') << setw(x) << " " << endl;
+    cout << setfill(' ') << setw(w) << prix1 + prix2 + prix3
+         << setw(w) << (prix1 + prix2 + prix3) * TVA << endl;
+
+    return 0;
+}
