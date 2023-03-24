@@ -1,0 +1,46 @@
+/*
+ Ex - zestes de savoir: La Laverie
+But : Le OR que nous avons vu plus tôt dans ce chapitre est dit «inclusif».
+ Ainsi, a || b signifie a, ou b, ou les deux.
+Le but de cet exercice va être de faire un OU dit «exclusif»,
+ c’est-à-dire que si a et b renvoient la même chose, l’expression est évaluée à false, sinon à true.
+Vous pouvez le faire avec les opérateurs que nous avons vus.
+
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 26.10.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+const string answTrue = "True";
+const string answFalse = "False";
+
+int main() {
+    int a = 0, b = 0;
+    string answer = " ";
+    do {
+        cout << "Entrez les valeures (1 = TRUE ; 0 = FALSE): ";
+        cin >> a >> b;
+        while (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrez 1 ou 0: ";
+            cin >> a >> b;
+        }
+
+        if ((a == 1 && b == 0) || (a == 0 && b == 1)) {
+            answer = answTrue;
+            cout << answTrue << endl;
+
+        } else {
+            answer = answFalse;
+            cout << answFalse << endl;
+        }
+    } while (answer == answFalse);
+    return 0;
+}
