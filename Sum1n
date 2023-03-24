@@ -1,0 +1,27 @@
+/*
+ Ex - zestes de savoir: Sommes de nombres de 1 à n.
+But : Disons que je vous donne un entier NNN au hasard.
+Pouvez-vous me créer un programme capable de me donner la somme de tous les entiers de 1 à nnn.
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 26.10.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n = 0, i = 0, total = 0;
+
+    cout << "Entrez un nombre: ";
+    cin >> n;
+
+    for (i = 0 ; i <= n ; i++ ){
+        total += i;
+    }
+    cout << "La somme totale vaut: " << total;
+
+    return 0;
+}
