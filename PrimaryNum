@@ -1,0 +1,46 @@
+/*
+ Ex - zestes de savoir: Test de primalité.
+But : Il s’agit d’un test pour déterminer si un entier est premier,
+c’est-à-dire divisible uniquement par 1 et par lui-même
+Auteur(-e-s) : Elbunita Halimi
+Date création : 26.10.2022
+mise à jour : 02.11.2022
+Remarque(s) :.
+*/
+
+#include <iostream>
+#include <limits>
+
+
+using namespace std;
+
+int main() {
+
+    int nbrePremier = 0;
+    int ctrl = 0;
+
+    cout << "Entrez un nombre pour tester s'il est premier: ";
+    cin >> nbrePremier;
+    while (cin.fail()){
+        cin.clear ();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Entrez non valide, recommencez: ";
+        cin >> nbrePremier;
+    }
+
+    for (int i = 2; i < nbrePremier; i++) {
+
+        if (nbrePremier % i == 0) {
+            ctrl++;
+            cout << ctrl << " ";
+        }
+    }
+    cout << " sont des diviseurs de " << nbrePremier << ", il n'est donc pas premier.";
+
+    if (ctrl == 0){
+        cout << "le nombre est premier";
+
+    }
+
+    return 0;
+}
