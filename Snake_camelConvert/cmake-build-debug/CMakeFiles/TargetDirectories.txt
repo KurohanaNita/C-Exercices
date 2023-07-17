@@ -1,0 +1,3 @@
+C:/Users/ehalimi/Desktop/Snake_camelConvert/cmake-build-debug/CMakeFiles/Snake_camelConvert.dir
+C:/Users/ehalimi/Desktop/Snake_camelConvert/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ehalimi/Desktop/Snake_camelConvert/cmake-build-debug/CMakeFiles/rebuild_cache.dir
